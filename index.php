@@ -1,25 +1,25 @@
 <?php
-@include('init.php');
-if(!isset($_SESSION['id']))
-{
-    if(isset($_COOKIE['acc_id']))
-    {
-        $query=mysql_query("SELECT id FROM users WHERE account_id='$_COOKIE[acc_id]' LIMIT 1");
-        if($query&&mysql_num_rows($query)==1)
-        {
-            $array=mysql_fetch_row($query);
+// @include('init.php');
+// if(!isset($_SESSION['id']))
+// {
+//     if(isset($_COOKIE['acc_id']))
+//     {
+//         $query=mysql_query("SELECT id FROM users WHERE account_id='$_COOKIE[acc_id]' LIMIT 1");
+//         if($query&&mysql_num_rows($query)==1)
+//         {
+//             $array=mysql_fetch_row($query);
 
-            $_SESSION['id']=$array[0];
-            header("Location: ./ideas.php");
-            exit();
-        }
-    }
-}
-else
-{
-    header("Location: ./ideas.php");
-    exit();
-}
+//             $_SESSION['id']=$array[0];
+//             header("Location: ./ideas.php");
+//             exit();
+//         }
+//     }
+// }
+// else
+// {
+//     header("Location: ./ideas.php");
+//     exit();
+// }
 
 include('universal_functions.php');
 
